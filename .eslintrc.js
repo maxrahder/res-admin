@@ -1,9 +1,7 @@
 module.exports = {
     globals: {
         Ext: false,
-        App: false,
-        d3: false,
-        FroalaEditor: false,
+        Admin: false,
         setImmediate: false,
         clearImmediate: false
     },

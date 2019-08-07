@@ -20,29 +20,16 @@ Ext.define('Admin.view.main.MainView', {
         {
             xclass: 'Admin.view.navigation.NavigationView',
             dock: 'left',
-            reference: 'navigationTreeList',
-            itemId: 'navigationTreeList',
+            reference: 'navigation',
             ui: 'nav',
             bind: {
                 width: '{leftWidth}'
             },
             listeners: {
-                selectionchange: 'onNavigationTreeSelectionChange'
+                selectionchange: 'onNavigationSelectionChange'
             }
         }
     ],
-    layout: 'fit',
-    items: [
-        {
-            xtype: 'container',
-            flex: 1,
-            reference: 'mainCardPanel',
-            cls: 'sencha-dash-right-main-container',
-            itemId: 'contentPanel',
-            layout: {
-                type: 'card',
-                anchor: '100%'
-            }
-        }
-    ]
+    layout: 'card',
+    items: []
 });

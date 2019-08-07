@@ -1,10 +1,11 @@
-
-Ext.define('Admin.view.organization.overview.OverviewView',{
+Ext.define('Admin.view.organization.overview.OverviewView', {
     extend: 'Ext.panel.Panel',
+    xtype: 'overviewview',
 
     requires: [
         'Admin.view.organization.overview.OverviewViewController',
-        'Admin.view.organization.overview.OverviewViewModel'
+        'Admin.view.organization.overview.OverviewViewModel',
+        'Admin.view.program.list.ListView'
     ],
 
     controller: 'organization-overview-overviewview',
@@ -12,5 +13,10 @@ Ext.define('Admin.view.organization.overview.OverviewView',{
         type: 'organization-overview-overviewview'
     },
 
-    html: 'Hello, World!!'
+    layout: 'fit',
+    items: [
+        {
+            xclass: 'Admin.view.program.list.ListView'
+        }
+    ]
 });

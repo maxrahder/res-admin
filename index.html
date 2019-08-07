@@ -1,15 +1,28 @@
 <!DOCTYPE HTML>
 <html manifest="">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
 
-    <title>Admin</title>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
 
-    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <script id="microloader" data-app="3e22574f-5134-491c-80e3-f37fa65aa5bc" type="text/javascript" src="bootstrap.js"></script>
+        <title>Admin</title>
 
-</head>
-<body></body>
+        <script>
+            window.Admin = window.Admin || {};
+            Admin.local = window.location.search.match(/\blocal\b/); // Whole word "local"
+            Admin.url = function(service) {
+                return (Admin.local ? 'resources/data/' : 'https://adminDEV.renstudent.com/ProgramEnrollmentAdmin') + service;
+            }
+        </script>
+
+        <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+        <script id="microloader" data-app="3e22574f-5134-491c-80e3-f37fa65aa5bc"
+            type="text/javascript" src="bootstrap.js"></script>
+
+    </head>
+
+    <body></body>
+
 </html>
