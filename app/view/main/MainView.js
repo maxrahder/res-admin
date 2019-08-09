@@ -1,35 +1,29 @@
 Ext.define('Admin.view.main.MainView', {
     extend: 'Ext.panel.Panel',
-    xtype: 'app-main',
-
     requires: [
         'Admin.view.main.MainViewController',
         'Admin.view.main.MainViewModel',
-        'Admin.view.navigation.NavigationView',
-        'Admin.view.header.HeaderView'
+        'Admin.view.organization.organization.OrganizationView'
     ],
-
-    controller: { xclass: 'Admin.view.main.MainViewController' },
-    viewModel: { xclass: 'Admin.view.main.MainViewModel' },
+    controller: 'mainviewcontroller',
+    viewModel: {
+        type: 'mainviewmodel'
+    },
 
     dockedItems: [
         {
-            xclass: 'Admin.view.header.HeaderView',
-            dock: 'top'
-        },
-        {
-            xclass: 'Admin.view.navigation.NavigationView',
-            dock: 'left',
-            reference: 'navigation',
-            ui: 'nav',
+            xtype: 'label',
+            cls: 'mainheader',
+            docked: 'top',
             bind: {
-                width: '{leftWidth}'
-            },
-            listeners: {
-                selectionchange: 'onNavigationSelectionChange'
+                html: '{organization.text}'
             }
         }
     ],
-    layout: 'card',
-    items: []
+    layout: 'fit',
+    items: [
+        {
+            xclass: 'Admin.view.organization.organization.OrganizationView'
+        }
+    ]
 });
